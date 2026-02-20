@@ -1031,7 +1031,7 @@ function updateBoardTitle(transperth_stop_name) {
 function handleFavStar() {
     if (!currentStop) return;
     if (findFav(currentStop)) return; // already saved, do nothing
-    document.getElementById('favAddName').value = currentStopName || '';
+    document.getElementById('favAddName').value = (STOPS[String(currentStop)] || [])[2] || currentStopName || '';
     document.getElementById('favAddPrompt').classList.add('open');
     document.getElementById('favAddName').focus();
     document.getElementById('favAddName').select();
